@@ -2,4 +2,4 @@
 Its an implementation of md5 algorithem using java. 
 
 
-# All Querys please contact on jspike team!!!
+All query please contact jSpike team. Email:jspike@googlegroups.com
