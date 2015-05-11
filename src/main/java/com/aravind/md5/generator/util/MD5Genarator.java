@@ -8,15 +8,22 @@ import java.security.NoSuchAlgorithmException;
 
 import org.apache.log4j.Logger;
 
+
+
 /**
  * @author aravind
  *
  */
 public class MD5Genarator {
 	public static final Logger LOG = Logger.getLogger(MD5Genarator.class);
+	public static enum MESSAGE_DIGEST_ALGORITHM_TYPE {
+		MD5, SHA160 ,SHA256
+	}
 	
-	public static String generateMD5HashString(String message, String algorithm){
+	public static String generateMD5HashString(String message, MESSAGE_DIGEST_ALGORITHM_TYPE TYPE){
 		StringBuffer hashString = null;
+		String algorithm = TYPE.name();
+		LOG.info("-----algorithm type---"+algorithm);
 		if(!message.isEmpty() && !message.equals(null) && !algorithm.isEmpty() && !algorithm.equals(null)){
 			try {
 				MessageDigest msgDigest = MessageDigest.getInstance(algorithm);
