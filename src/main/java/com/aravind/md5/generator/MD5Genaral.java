@@ -18,8 +18,8 @@ import com.aravind.md5.generator.util.MD5Genarator.MESSAGE_DIGEST_ALGORITHM_TYPE
  */
 public class MD5Genaral {
 
-	public static final Logger LOG = Logger.getLogger(MD5Genaral.class);
-	
+	//public static final Logger LOG = Logger.getLogger(MD5Genaral.class);
+	private static final Logger LOG = Logger.getLogger(MD5Genaral.class);
 	/**
 	 * main function from which all call are invoked
 	 * @param args

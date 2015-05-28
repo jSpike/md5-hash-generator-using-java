@@ -8,6 +8,8 @@ import java.security.NoSuchAlgorithmException;
 
 import org.apache.log4j.Logger;
 
+import com.aravind.md5.generator.MD5Genaral;
+
 
 
 /**
@@ -15,7 +17,8 @@ import org.apache.log4j.Logger;
  *
  */
 public class MD5Genarator {
-	public static final Logger LOG = Logger.getLogger(MD5Genarator.class);
+	//public static final Logger LOG = Logger.getLogger(MD5Genarator.class);
+	private static final Logger LOG = Logger.getLogger(MD5Genarator.class);
 	public static enum MESSAGE_DIGEST_ALGORITHM_TYPE {
 		MD5, SHA160 ,SHA256
 	}
