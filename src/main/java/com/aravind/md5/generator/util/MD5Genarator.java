@@ -17,10 +17,9 @@ import com.aravind.md5.generator.MD5Genaral;
  *
  */
 public class MD5Genarator {
-	//public static final Logger LOG = Logger.getLogger(MD5Genarator.class);
-	private static final Logger LOG = Logger.getLogger(MD5Genarator.class);
+	private static final Logger LOG = Logger.getLogger(MD5Genarator.class);	
 	public static enum MESSAGE_DIGEST_ALGORITHM_TYPE {
-		MD5, SHA160 ,SHA256
+		MD5, SHA160 , SHA256
 	}
 	
 	public static String generateMD5HashString(String message, MESSAGE_DIGEST_ALGORITHM_TYPE TYPE){
@@ -43,6 +42,29 @@ public class MD5Genarator {
 		}
 		LOG.info("-----------hashed value==="+hashString);
 		return hashString.toString();
+	}
+	/**
+	 * To get SHA-256 hashed values
+	 * @param message
+	 * @param TYPE
+	 * @return {@link String}
+	 */
+	public static String generateSHA256HashString(String message, MESSAGE_DIGEST_ALGORITHM_TYPE TYPE) {
+		StringBuffer shaHasedString = new StringBuffer();
+		try {
+	        MessageDigest md;
+	        String algorithem = "SHA-256";
+			md = MessageDigest.getInstance(algorithem);
+			md.update(message.getBytes());
+		    byte byteData[] = md.digest();
+	        for (int i = 0; i < byteData.length; i++) {
+	        	shaHasedString.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+	        }
+	        LOG.info("----sha-256-"+shaHasedString.toString());
+		} catch (NoSuchAlgorithmException e) {
+			LOG.error(e);
+		}
+		return shaHasedString.toString();
 	}
 
 }
