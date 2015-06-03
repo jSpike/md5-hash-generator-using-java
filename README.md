@@ -5,6 +5,7 @@ Java in-built support for Message Digest Algorithm in the package import java.se
 --complete jar package
 --Apcahe Log support
 --Build with gradle
-
+--Easy to execute 
+--plug and play jar
 
 All query please contact jSpike team. Email:jspike@googlegroups.com
